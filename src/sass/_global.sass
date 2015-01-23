@@ -1,0 +1,624 @@
+
+
+// add fonts
+
+@import "../fonts/DINPro-Black/fonts.css"
+@import "../fonts/DINPro-bold/fonts.css"
+@import "../fonts/DINPro-Light/fonts.css"
+@import "../fonts/DINPro-Medium/fonts.css"
+@import "../fonts/DINPro-Regular/fonts.css"
+
+// add fonts end
+
+// Fonts variables
+
+$din-black: 'Conv_DINPro-Black'
+$din-bold: 'Conv_DINPro-Bold'
+$din-light: 'Conv_DINPro-Light'
+$din-medium: 'Conv_DINPro-Medium'
+$din-regular: 'Conv_DINPro-Regular'
+
+$arial: "Arial"
+$tnr: "Times New Roman"
+
+$pt-caption: "PT Serif Caption", serif
+
+// Fonts variables
+
+// Main styles
+
+.container
+  padding: 0 50px
+  font-family: $din-regular
+  min-width: 1100px
+  max-width: 1400px
+  margin: 0 auto
+
+p
+  color: #4f4f4f // text color
+  font-family: $arial
+  font-size: 13px
+  line-height: 20px
+
+
+.border__red
+  color: #2e2e2e // text color
+  font-family: $tnr
+  font-size: 20px
+  line-height: 1.3
+  border-bottom: 1px solid #E83829
+  display: inline
+  font-weight: normal
+
+.lg__title
+  text-align: center
+
+  h2
+    color: #2e2e2e // text color
+    font-family: $din-regular
+    font-size: 35px
+    line-height: 1
+    font-weight: normal
+    text-transform: uppercase
+    position: relative
+
+    &:after
+      content: ''
+      display: inline-block
+      background: #c3bdaf
+      height: 1px
+      position: absolute
+      left: 0
+      right: 0
+      top: 19px
+
+    span
+      background: #fff
+      position: relative
+      z-index: 1
+      padding: 0 15px
+
+  i
+    color: #4d4d4d // text color
+    font-family: $pt-caption
+    font-size: 13px
+    line-height: 1
+    font-style: italic
+
+.title-dashed
+  text-align: center
+  position: relative
+  
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    border-bottom: 1px #c3bdaf dashed
+    top: 17px
+
+  span
+    background: #fff
+    position: relative
+    z-index: 1
+    padding: 0 15px
+    font-size: 20px
+    line-height: 1
+    text-transform: uppercase
+
+.row
+  +clearfix
+
+
+// Main styles end
+
+
+header
+  padding-top: 40px
+  padding-bottom: 10px
+  +clearfix
+
+  .links
+    width: (100%/4)
+    float: left
+
+    ul
+      +clearfix
+
+    li
+      float: left
+    
+    a
+      display: inline-block
+      vertical-align: top
+      margin-right: 18px
+
+      &.tw
+        +s($s-tw)
+
+      &.fb
+        +s($s-fb)
+
+      &.ng
+        color: #4d4d4d // text color
+        font-family: $pt-caption
+        font-size: 13px
+        line-height: 1
+        font-style: italic
+
+
+  .logo
+    width: (100%/2)
+    float: left
+    text-align: center
+    font-family: $din-regular
+    color: #252525
+    text-decoration: none
+    text-transform: uppercase
+
+    h1
+      font-size: 25px
+      line-height: 1
+      font-weight: normal
+
+    h2
+      font-size: 13px
+      margin-top: 3px
+
+
+  .lang
+    width: (100%/4)
+    float: right
+    text-align: right
+
+    a
+      color: #000
+      font-size: 13px
+      border-bottom: 1px #bebebe solid
+      text-decoration: none
+      text-transform: uppercase
+      margin-right: 8px
+
+      &.active
+        border-bottom: none
+        color: #666666
+
+
+.content
+  padding-top: 20px
+  +clearfix
+
+  .events
+    width: (100%/4)
+    float: left
+
+
+    &__img
+      float: left
+      position: relative
+      margin-right: 12px
+
+      &:after
+        content: ''
+        display: inline-block
+        background: url("../img/events/bottom-line.png") repeat-x
+        height: 16px
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+
+    &__info
+      float: left
+      margin-top: -5px
+      margin-bottom: 15px
+
+      h2
+        color: #2f2f2f // text color
+        font-family: $pt-caption
+        font-size: 40px
+        line-height: 1
+        font-style: italic
+        font-weight: normal
+
+      p
+        color: #2e2e2e // text color
+        font-family: $arial
+        font-size: 13px
+        margin-top: 3px
+
+    &__mounth
+      margin-left: 5px
+
+    &__text
+      border-top: 1px #e53b1f solid
+      max-width: 102px
+      padding-top: 5px
+      margin-top: 5px
+      margin-left: 5px
+
+      p
+        color: #4d4d4d // text color
+        font-family: $pt-caption
+        font-size: 13px
+        font-style: italic
+
+    &__header
+      +clearfix
+
+    &__descr
+      a
+        text-decoration: none
+
+      p
+        margin: 10px 0
+
+
+  .main-slider
+    width: (100%/2)
+    float: left
+    text-align: center
+    position: relative
+
+    .slider
+      display: inline-block
+      position: relative
+
+      li
+        display: none
+
+        &.active
+          display: block
+
+    .slider-num
+      position: absolute
+      left: 15px
+      bottom: 15px
+      z-index: 99
+      color: #fff // text color
+      font-family: $pt-caption
+      font-size: 50px
+      line-height: 1
+      font-style: italic
+
+
+    .slider__controls
+      position: absolute
+      left: 15px
+
+      span
+        color: #2e2e2e // text color
+        font-family: $arial
+        font-size: 13px
+        text-decoration: none
+        border-bottom: 1px #bebebe solid
+        margin-right: 15px
+        cursor: pointer
+
+
+    .slide__caption
+      position: absolute
+      max-width: 370px
+      text-align: left
+      right: -310px
+      bottom: 55px
+
+      h2
+        color: #2e2e2e // text color
+        font-family: $din-regular
+        font-size: 35px
+        line-height: 1
+        font-weight: normal
+        text-transform: uppercase
+        border-bottom: 1px black dotted
+        display: inline-block
+        margin-bottom: 10px
+
+      .btn
+        display: inline-block
+
+        &.more
+          margin-top: 20px
+          margin-left: -10px
+          border: 3px #e53c20 solid
+          color: #e53b1f // text color
+          font-family: $arial
+          font-size: 13px
+          text-decoration: none
+          padding: 6px 10px
+
+          .dotted
+            border-bottom: 1px dotted #e53c20
+
+  .main-nav
+    width: (100%/4)
+    float: right
+    text-align: right
+
+    ul
+      li
+        margin-bottom: 3px
+
+        a
+          text-transform: uppercase
+          font-size: 15px
+          text-decoration: none
+          color: #252525
+          padding: 0 5px
+          
+        &.active
+          a
+            background: #ebe7d6
+
+
+
+.portfolio
+  margin-top: 70px
+
+  .categories__slides
+    margin-top: 35px
+    +clearfix
+
+    .category__item
+      float: left
+      text-align: center
+      width: (100%/3)
+
+      .title
+        display: inline-block
+        text-decoration: none
+        margin-bottom: 14px
+
+        h4
+          line-height: 1
+          display: inline-block
+
+    .slider
+      max-width: 275px
+      margin: 0 auto
+      position: relative
+
+    .slides_list
+      >li
+        max-height: 191px
+        position: relative
+        display: none
+
+        &.active
+          display: block
+
+    .slide__caption
+      position: absolute
+      background: rgba(#2f2f2f, .8)
+      bottom: 0
+      left: 0
+      right: 0
+      padding: 10px
+
+      p
+        color: #ffffff
+        font-family: $pt-caption
+        font-size: 13px
+        font-style: italic
+
+
+    .slider-num
+      position: absolute
+      color: #2f2f2f // text color
+      font-family: $pt-caption
+      font-size: 30px
+      line-height: 1
+      font-style: italic
+      top: 13px
+      right: -18px
+
+    .slider__controls
+      position: absolute
+      left: 10px
+      right: 10px
+      bottom: 10px
+      +clearfix
+
+      a
+        +s($s-sm-slider-arrow)
+
+        &:hover
+          +s($s-sm-slider-arrow-hover)
+
+      .prev
+        float: left
+        transform: rotate(180deg)
+
+
+      .next
+        float: right
+
+
+
+  .expositions
+    +clearfix
+    margin-top: 105px
+    margin-bottom: 35px
+    
+    .descr__text
+      width: (100%/4)
+      float: left
+      text-align: right
+      margin-top: 25px
+
+      p
+        margin-left: 50px
+
+      .more
+        text-decoration: none
+        color: #e53b1f // text color
+        font-family: $arial
+        font-size: 13px
+        border-bottom: 1px #e53b1f solid
+        margin-top: 10px
+        display: inline-block
+
+
+
+    .exposition__title
+      width: 75%
+      float: right
+
+      a
+        text-decoration: none
+        display: inline-block
+        padding-left: 30px
+
+      h2
+        color: #2e2e2e // text color
+        font-family: $din-regular
+        font-size: 70px
+        font-weight: normal
+        text-transform: uppercase
+
+.media
+  margin-top: 60px
+
+  .lg__title
+    margin-bottom: 45px
+
+    h2
+      margin-bottom: 10px
+
+  .row
+    .project__items
+      text-align: center
+      margin-top: 12px
+      +clearfix
+
+      .project__item
+        text-align: left
+        width: 63%
+        padding: 12px
+        padding-right: 20px
+        border: 1px transparent solid
+
+        &:hover
+          border: 1px #CDC6BB solid
+
+          .img
+            &:after
+              +s($s-play-icon-hover)
+
+        p
+          margin-top: 10px
+
+        .img
+          display: inline-block
+          position: relative
+
+          &:after
+            content: ''
+            display: inline-block
+            +s($s-play-icon)
+            position: absolute
+            left: 50%
+            margin-left: -17px
+            top: 50%
+            margin-top: -15px
+
+        .title__link
+          text-decoration: none
+          display: block
+
+
+  .doc__movie
+    width: 70%
+    float: left
+
+    .title-dashed
+      margin-right: 25px
+
+    .project__items
+      padding-left: 35px
+
+      .project__item
+        width: (100%/3)
+        float: left
+        box-sizing: border-box
+
+
+
+  .game__movie
+    float: right
+    width: 30%
+
+    .title-dashed
+      margin-left: 10px
+
+    .project__items
+      text-align: right
+
+      .project__item
+        display: inline-block
+
+
+
+  .books
+    margin-top: 25px
+
+    .project__items
+      margin-top: 30px
+      text-align: center
+
+      .project__item
+        display: inline-block
+        vertical-align: top
+        text-align: left
+        width: 28%
+        margin: 0 30px
+
+        a
+          text-decoration: none
+
+        .img
+          float: left
+          margin-left: -40px
+          margin-top: -10px
+
+        h3
+          border-bottom: 1px #E83829 dotted
+          line-height: 1
+
+        p
+          margin-top: 10px
+
+        &:last-child
+          width: 25%
+          margin-left: 80px
+
+          .img
+            margin-right: 10px
+
+
+footer
+  text-align: center
+  border-top: 1px #C4BDB0 solid
+  margin-top: 50px
+  padding-top: 10px
+  padding-bottom: 25px
+
+  .copyrights
+    color: #2e2e2e // text color
+    font-size: 20px
+    font-weight: normal
+    text-transform: uppercase
+
+  p
+    a
+      color: #e53c20
+      font-family: $pt-caption
+      font-size: 13px
+      font-style: italic
+
+  .studio-link
+    margin-top: 20px
+
+    a
+      color: #4d4d4d
+
