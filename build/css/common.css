@@ -59,7 +59,7 @@ p {
   font-size: 13px;
   line-height: 20px; }
 
-.border-red, .portfolio .categories .category__item .category__title, .portfolio .expositions .exposition__title h2, .media .project__items .project__item .project__link span {
+.border-red, .content .events .events__title, .portfolio .categories .category__item .category__title, .portfolio .expositions .exposition__title h2, .media .project__items .project__item .project__link span {
   color: #2e2e2e;
   font-family: "Times New Roman";
   font-size: 20px;
@@ -69,7 +69,7 @@ p {
   font-weight: normal;
   -webkit-transition: all, .5s;
   transition: all, .5s; }
-  .border-red:hover, .portfolio .categories .category__item .category__title:hover, .portfolio .expositions .exposition__title h2:hover, .media .project__items .project__item .project__link span:hover {
+  .border-red:hover, .content .events .events__title:hover, .portfolio .categories .category__item .category__title:hover, .portfolio .expositions .exposition__title h2:hover, .media .project__items .project__item .project__link span:hover {
     border-bottom: 1px #fce3e1 dotted; }
 
 .title_lg {
