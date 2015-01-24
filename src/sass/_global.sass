@@ -51,6 +51,11 @@ p
   border-bottom: 1px solid #E83829
   display: inline
   font-weight: normal
+  transition: all, .5s
+  
+  &:hover
+    border-bottom: 1px lighten(#E83829, 40%) dotted
+
 
 .lg__title
   text-align: center
@@ -147,6 +152,12 @@ header
         font-size: 13px
         line-height: 1
         font-style: italic
+        text-decoration: none
+        border-bottom: 1px #4d4d4d solid
+        transition: all, .3s
+
+        &:hover
+          border-bottom: 1px lighten(#4d4d4d, 50%) solid
 
 
   .logo
@@ -296,7 +307,9 @@ header
         border-bottom: 1px #bebebe solid
         margin-right: 15px
         cursor: pointer
-
+        
+        &:hover
+          border-bottom: none
 
     .slide__caption
       position: absolute
@@ -328,9 +341,14 @@ header
           font-size: 13px
           text-decoration: none
           padding: 6px 10px
+          transition: all, .3s
 
           .dotted
             border-bottom: 1px dotted #e53c20
+
+          &:hover
+            background: #e53b1f
+            color: #ffffff
 
   .main-nav
     width: (100%/4)
@@ -459,6 +477,9 @@ header
         border-bottom: 1px #e53b1f solid
         margin-top: 10px
         display: inline-block
+        
+        &:hover
+          border-bottom: none
 
 
 
@@ -499,6 +520,7 @@ header
         padding: 12px
         padding-right: 20px
         border: 1px transparent solid
+        transition: all, .2s
 
         &:hover
           border: 1px #CDC6BB solid
@@ -586,6 +608,10 @@ header
         h3
           border-bottom: 1px #E83829 dotted
           line-height: 1
+          transition: all, .5s
+
+          &:hover
+            border-bottom: 1px lighten(#E83829, 30%) dotted
 
         p
           margin-top: 10px
@@ -616,11 +642,24 @@ footer
       color: #e53c20
       font-family: $pt-caption
       font-size: 13px
+      line-height: 1
       font-style: italic
+      text-decoration: none
+      border-bottom: 1px #e53c20 solid
+
+      &:hover
+        border-bottom: 1px lighten(#e53c20, 30%) solid
+
 
   .studio-link
     margin-top: 20px
 
     a
       color: #4d4d4d
+      line-height: 1
+      text-decoration: none
+      border-bottom: 1px #4d4d4d solid
+
+      &:hover
+        border-bottom: 1px lighten(#4d4d4d, 40%) solid
 
