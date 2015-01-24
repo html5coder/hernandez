@@ -43,7 +43,7 @@ p
   line-height: 20px
 
 
-.border__red
+.border-red
   color: #2e2e2e // text color
   font-family: $tnr
   font-size: 20px
@@ -57,7 +57,7 @@ p
     border-bottom: 1px lighten(#E83829, 40%) dotted
 
 
-.lg__title
+.title_lg
   text-align: center
 
   h2
@@ -92,7 +92,7 @@ p
     line-height: 1
     font-style: italic
 
-.title-dashed
+.title_dashed
   text-align: center
   position: relative
   
@@ -120,7 +120,7 @@ p
 // Main styles end
 
 
-header
+.top__header
   padding-top: 40px
   padding-bottom: 10px
   +clearfix
@@ -140,10 +140,10 @@ header
       vertical-align: top
       margin-right: 18px
 
-      &.tw
+      &.icon_tw
         +s($s-tw)
 
-      &.fb
+      &.icon_fb
         +s($s-fb)
 
       &.ng
@@ -154,6 +154,7 @@ header
         font-style: italic
         text-decoration: none
         border-bottom: 1px #4d4d4d solid
+        margin-left: 3px
         transition: all, .3s
 
         &:hover
@@ -169,20 +170,27 @@ header
     text-decoration: none
     text-transform: uppercase
 
-    h1
+    &__title
       font-size: 25px
       line-height: 1
       font-weight: normal
+      letter-spacing: 3px
 
-    h2
+    &__subtitle
       font-size: 13px
       margin-top: 3px
+      display: block
 
 
   .lang
     width: (100%/4)
     float: right
     text-align: right
+    +clearfix
+
+    li
+      display: inline-block
+      vertical-align: top
 
     a
       color: #000
@@ -191,10 +199,17 @@ header
       text-decoration: none
       text-transform: uppercase
       margin-right: 8px
+      transition: all, .5s
+
+      &:hover
+        border-bottom: 1px black solid
 
       &.active
         border-bottom: none
         color: #666666
+
+
+
 
 
 .content
@@ -205,69 +220,64 @@ header
     width: (100%/4)
     float: left
 
+    .events__media
+        float: left
+        position: relative
+        margin-right: 12px
 
-    &__img
-      float: left
-      position: relative
-      margin-right: 12px
+        &:after
+          content: ''
+          display: inline-block
+          background: url("../img/events/bottom-line.png") repeat-x
+          height: 16px
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
 
-      &:after
-        content: ''
-        display: inline-block
-        background: url("../img/events/bottom-line.png") repeat-x
-        height: 16px
-        position: absolute
-        bottom: 0
-        left: 0
-        right: 0
+    .events__date
+        float: left
+        margin-top: -5px
+        margin-bottom: 15px
 
-    &__info
-      float: left
-      margin-top: -5px
-      margin-bottom: 15px
+        .events__days
+          color: #2f2f2f // text color
+          font-family: $pt-caption
+          font-size: 40px
+          line-height: 1
+          font-style: italic
+          font-weight: normal
 
-      h2
-        color: #2f2f2f // text color
-        font-family: $pt-caption
-        font-size: 40px
-        line-height: 1
-        font-style: italic
-        font-weight: normal
+        .events__month
+          color: #2e2e2e // text color
+          font-family: $arial
+          font-size: 13px
+          margin-top: 3px
+          margin-left: 5px
 
-      p
-        color: #2e2e2e // text color
-        font-family: $arial
-        font-size: 13px
-        margin-top: 3px
-
-    &__mounth
-      margin-left: 5px
-
-    &__text
-      border-top: 1px #e53b1f solid
-      max-width: 102px
-      padding-top: 5px
-      margin-top: 5px
-      margin-left: 5px
-
-      p
+    .events__label
+        border-top: 1px #e53b1f solid
+        max-width: 102px
+        padding-top: 5px
+        margin-top: 5px
+        margin-left: 5px
         color: #4d4d4d // text color
         font-family: $pt-caption
         font-size: 13px
         font-style: italic
 
-    &__header
-      +clearfix
+    .events__info
+        +clearfix
 
-    &__descr
-      a
-        text-decoration: none
+    .events__content
+        a
+          text-decoration: none
 
-      p
-        margin: 10px 0
+        p
+          margin: 10px 0
 
 
-  .main-slider
+  .main__slider
     width: (100%/2)
     float: left
     text-align: center
@@ -283,7 +293,7 @@ header
         &.active
           display: block
 
-    .slider-num
+    .slider__num
       position: absolute
       left: 15px
       bottom: 15px
@@ -311,7 +321,7 @@ header
         &:hover
           border-bottom: none
 
-    .slide__caption
+    .slider__caption
       position: absolute
       max-width: 370px
       text-align: left
@@ -332,7 +342,7 @@ header
       .btn
         display: inline-block
 
-        &.more
+        &.btn_more
           margin-top: 20px
           margin-left: -10px
           border: 3px #e53c20 solid
@@ -343,14 +353,14 @@ header
           padding: 6px 10px
           transition: all, .3s
 
-          .dotted
+          span
             border-bottom: 1px dotted #e53c20
 
           &:hover
             background: #e53b1f
             color: #ffffff
 
-  .main-nav
+  .main__nav
     width: (100%/4)
     float: right
     text-align: right
@@ -375,7 +385,7 @@ header
 .portfolio
   margin-top: 70px
 
-  .categories__slides
+  .categories
     margin-top: 35px
     +clearfix
 
@@ -384,21 +394,20 @@ header
       text-align: center
       width: (100%/3)
 
-      .title
+      .category__title
         display: inline-block
         text-decoration: none
         margin-bottom: 14px
+        line-height: 1
 
-        h4
-          line-height: 1
-          display: inline-block
+        @extend .border-red
 
     .slider
       max-width: 275px
       margin: 0 auto
       position: relative
 
-    .slides_list
+    .slider__list
       >li
         max-height: 191px
         position: relative
@@ -407,22 +416,20 @@ header
         &.active
           display: block
 
-    .slide__caption
+    .slider__caption
       position: absolute
       background: rgba(#2f2f2f, .8)
       bottom: 0
       left: 0
       right: 0
       padding: 10px
-
-      p
-        color: #ffffff
-        font-family: $pt-caption
-        font-size: 13px
-        font-style: italic
+      color: #ffffff
+      font-family: $pt-caption
+      font-size: 13px
+      font-style: italic
 
 
-    .slider-num
+    .slider__num
       position: absolute
       color: #2f2f2f // text color
       font-family: $pt-caption
@@ -445,12 +452,11 @@ header
         &:hover
           +s($s-sm-slider-arrow-hover)
 
-      .prev
+      .slider__control_prev
         float: left
         transform: rotate(180deg)
 
-
-      .next
+      .slider__control_next
         float: right
 
 
@@ -460,7 +466,7 @@ header
     margin-top: 105px
     margin-bottom: 35px
     
-    .descr__text
+    .expositions__info
       width: (100%/4)
       float: left
       text-align: right
@@ -469,7 +475,7 @@ header
       p
         margin-left: 50px
 
-      .more
+      a
         text-decoration: none
         color: #e53b1f // text color
         font-family: $arial
@@ -482,15 +488,11 @@ header
           border-bottom: none
 
 
-
     .exposition__title
       width: 75%
       float: right
-
-      a
-        text-decoration: none
-        display: inline-block
-        padding-left: 30px
+      text-decoration: none
+      text-align: left
 
       h2
         color: #2e2e2e // text color
@@ -498,64 +500,70 @@ header
         font-size: 70px
         font-weight: normal
         text-transform: uppercase
+        position: relative
+        left: 30px
+
+        @extend .border-red
 
 .media
   margin-top: 60px
 
-  .lg__title
+  .title_lg
     margin-bottom: 45px
 
-    h2
-      margin-bottom: 10px
+  .project__items
+    text-align: center
+    margin-top: 12px
+    +clearfix
 
-  .row
-    .project__items
-      text-align: center
-      margin-top: 12px
-      +clearfix
+    .project__item
+      text-align: left
+      width: 63%
+      padding: 12px
+      padding-right: 20px
+      border: 1px transparent solid
+      transition: all, .2s
 
-      .project__item
-        text-align: left
-        width: 63%
-        padding: 12px
-        padding-right: 20px
-        border: 1px transparent solid
-        transition: all, .2s
+      p
+        margin-top: 10px
 
-        &:hover
-          border: 1px #CDC6BB solid
+      .project__img
+        display: inline-block
+        position: relative
 
-          .img
-            &:after
-              +s($s-play-icon-hover)
+      .project__link
+        text-decoration: none
+        display: block
 
-        p
-          margin-top: 10px
+        span
+          @extend .border-red
 
-        .img
+  .video
+    .project__item
+
+      .project__img
+        &:after
+          content: ''
           display: inline-block
-          position: relative
+          +s($s-play-icon)
+          position: absolute
+          left: 50%
+          margin-left: -17px
+          top: 50%
+          margin-top: -15px
 
+      &:hover
+        border: 1px #CDC6BB solid
+
+        .project__img
           &:after
-            content: ''
-            display: inline-block
-            +s($s-play-icon)
-            position: absolute
-            left: 50%
-            margin-left: -17px
-            top: 50%
-            margin-top: -15px
+            +s($s-play-icon-hover)
 
-        .title__link
-          text-decoration: none
-          display: block
-
-
-  .doc__movie
+  .col-7
     width: 70%
     float: left
 
-    .title-dashed
+    .title_dashed
       margin-right: 25px
 
     .project__items
@@ -568,11 +576,11 @@ header
 
 
 
-  .game__movie
+  .col-3
     float: right
     width: 30%
 
-    .title-dashed
+    .title_dashed
       margin-left: 10px
 
     .project__items
@@ -600,18 +608,20 @@ header
         a
           text-decoration: none
 
-        .img
+        .project__img
           float: left
           margin-left: -40px
           margin-top: -10px
 
-        h3
-          border-bottom: 1px #E83829 dotted
-          line-height: 1
-          transition: all, .5s
+        .project__link
+          span
+            border-bottom: 1px #E83829 dotted
+            line-height: 1
+            transition: all, .5s
 
           &:hover
-            border-bottom: 1px lighten(#E83829, 30%) dotted
+            span
+              border-bottom: 1px lighten(#E83829, 30%) dotted
 
         p
           margin-top: 10px
@@ -620,11 +630,11 @@ header
           width: 25%
           margin-left: 80px
 
-          .img
+          .project__img
             margin-right: 10px
 
 
-footer
+footer.bottom__footer
   text-align: center
   border-top: 1px #C4BDB0 solid
   margin-top: 50px
